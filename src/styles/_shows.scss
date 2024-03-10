@@ -1,11 +1,25 @@
 @use 'variaveis';
 
+#star_plus{
+    display: none;
+}
+
+#populares{
+    display: none;
+}
+
 .shows{
+    padding: 5.6vw;
+    min-height: 50vw;
     &__list{
         margin-top: 44px;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 24px;
+
+        @media (max-width: 768px){
+            grid-template-columns: 1fr 1fr;
+        }
 
         &--is-active{
             display: grid;
@@ -22,6 +36,12 @@
         margin-top: 6vw;
         display: flex;
         justify-content: center;
+
+        @media(max-width: 768px){
+            white-space: nowrap;
+            overflow-x: scroll;
+            padding-left: 20px;
+        }
         
         &__button{
             color: variaveis.$corTextoSecundario;
@@ -34,8 +54,13 @@
             cursor: pointer;
             border-bottom: 5px solid transparent;
 
+            
             &--is-active{
                 border-bottom: 5px solid variaveis.$corTextoSecundario;
+            }
+
+            @media(max-width: 768px){
+                font-size: 16px;
             }
         }
     }
